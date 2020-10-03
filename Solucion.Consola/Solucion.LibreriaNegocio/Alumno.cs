@@ -13,9 +13,12 @@ namespace Solucion.LibreriaNegocio
         private int _codigo;
 
         //CONSTRUCTOR
-        public Alumno()
+        public Alumno(int codigo, string nombre, string apellido, DateTime fechaNaciemiento)
         {
-
+            this._codigo = codigo;
+            this._nombre = nombre;
+            this._apellido = apellido;
+            this._fechaNacimiento = fechaNaciemiento;
         }
         
         //PROPIEDADES
@@ -32,11 +35,11 @@ namespace Solucion.LibreriaNegocio
         //MÉTODOS
         public override string GetCredencial()
         {
-            return _codigo.ToString();
+            return string.Format("{0} - {1}, {2}", this._codigo, this._apellido, this._nombre);
         }
         public override string ToString()
         {
-            return base.ToString();
+            return GetCredencial();
         }
     }
 }

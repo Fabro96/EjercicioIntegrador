@@ -13,11 +13,6 @@ namespace Solucion.LibreriaNegocio
         protected string _apellido;
         protected DateTime _fechaNacimiento;
 
-        //CONSTRUCTOR
-        public Persona()
-        {
-
-        }
 
         //PROPIEDADES
         public string Nombre

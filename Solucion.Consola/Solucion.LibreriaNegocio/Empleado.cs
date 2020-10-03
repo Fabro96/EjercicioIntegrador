@@ -9,15 +9,21 @@ namespace Solucion.LibreriaNegocio
     public abstract class Empleado : Persona
     {
         //ATRIBUTOS
-        private DateTime _fechaIngreso;
-        private int _legajo;
-        private List<Salario> _salarios;
-        private Salario _ultimoSalario;
+        protected DateTime _fechaIngreso;
+        protected int _legajo;
+        protected List<Salario> _salarios;
+        protected Salario _ultimoSalario;
 
-        //CONSTRUCTOR
+        //CONSTRUCTORES
         public Empleado()
         {
 
+        }
+        public Empleado(int legajo, string nombre, string apellido)
+        {
+            this._legajo = legajo;
+            this._nombre = nombre;
+            this._apellido = apellido;
         }
 
         //PROPIEDADES
@@ -41,7 +47,7 @@ namespace Solucion.LibreriaNegocio
             set { _legajo = value; }
             get { return _legajo;  }
         }
-        public List<Salario> Salario
+        public List<Salario> Salarios
         {
             set { _salarios = value; }
             get { return _salarios;  }
@@ -63,7 +69,7 @@ namespace Solucion.LibreriaNegocio
         //}
         public override string GetCredencial()
         {
-            return _legajo.ToString();
+            return string.Format("{0} - {1} - {2} $ / {3} $", this._legajo, GetNombreCompleto(), this._salarios, this._ultimoSalario) ;
         }
         public override string GetNombreCompleto()
         {
@@ -71,7 +77,7 @@ namespace Solucion.LibreriaNegocio
         }
         public override string ToString()
         {
-            return base.ToString();
+            return GetCredencial();
         }
 
 
