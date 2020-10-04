@@ -11,6 +11,13 @@ namespace Solucion.LibreriaNegocio
         //ATRIBUTOS
         protected string _apodo;
 
+        
+        //CONSTRUCTOR
+        public Bedel(int legajo, string nombre, string apellido, DateTime fechaIngreso, double bruto, string apodo)
+        {
+
+        }
+
         //PROPIEDADES
         public string Apodo
         {

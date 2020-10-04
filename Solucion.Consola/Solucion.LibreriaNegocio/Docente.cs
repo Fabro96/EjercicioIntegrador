@@ -8,8 +8,12 @@ namespace Solucion.LibreriaNegocio
 {
     public class Docente : Empleado
     {
-        
 
+        //CONSTRUCTOR
+        public Docente(int legajo, string nombre, string apellido, DateTime fechaIngreso, double bruto)
+        {
+
+        }
         //MÉTODOS
         public override string GetNombreCompleto()
         {

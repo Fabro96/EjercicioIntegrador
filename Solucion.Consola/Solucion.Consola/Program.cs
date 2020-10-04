@@ -50,6 +50,7 @@ namespace Solucion.Consola
                         case 2:
                             //Listar Empleados
                             Program.ListarEmpleados(FCE);
+                            Console.ReadKey();
                             break;
                         case 3:
                             //Agregar Alumno
@@ -58,6 +59,7 @@ namespace Solucion.Consola
                         case 4:
                             //Agregar Empleado
                             Program.AgregarEmpleado(FCE);
+                            Console.ReadKey();
                             break;
                         case 5:
                             //Borrar Alumno
@@ -119,7 +121,30 @@ namespace Solucion.Consola
         }
         public static void AgregarEmpleado(Facultad facultad)
         {
+            try
+            {
+                string nombre = ConsolaHelper.PedirString("Nombre: ");
+                string apellido = ConsolaHelper.PedirString("Apellido: ");
+                int legajo = ConsolaHelper.PedirInt("Legajo: ");
+                string TipoEmpleado = ConsolaHelper.PedirString("tipo empleado (D Docente, B Bedel, A Directivo)");
+                DateTime fechaIngreso = ConsolaHelper.PedirFecha("Fecha de Ingreso: ");
 
+                string apodo = string.Empty;
+                if (TipoEmpleado.ToUpper() == "B")
+                {
+                    apodo = ConsolaHelper.PedirString("Apodo");
+                }
+
+                double bruto = ConsolaHelper.PedirDouble("Salario Bruto");
+
+                facultad.AgregarEmpleado(nombre, apellido, legajo, TipoEmpleado, fechaIngreso, apodo, bruto);
+                Console.WriteLine("\nEmpleado Agregado.");
+
+            } catch (Exception ex)
+            {
+                Console.WriteLine("Error en uno de los datos ingresado. " + ex.Message);
+                Console.ReadKey();
+            }
         }
         public static void BorrarAlumno(Facultad facultad)
         {

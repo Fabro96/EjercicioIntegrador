@@ -49,7 +49,7 @@ namespace Solucion.LibreriaNegocio
         }
         public bool TieneEmpleados
         {
-            get { return _empleados.Count > 0; }
+            get { return Empleados.Count > 0; }
         }
 
         //MÉTODOS
@@ -57,8 +57,25 @@ namespace Solucion.LibreriaNegocio
         {
 
         }
-        public void AgregarEmpleado(Empleado empleado)
+        public void AgregarEmpleado(string nombre, string apellido, int legajo, string TipoEmpleado, DateTime fechaIngreso, string apodo, double bruto)
         {
+            Empleado empleado;
+            
+            switch (TipoEmpleado.ToUpper())
+            {
+                case "A":
+                    empleado = new Directivo(legajo, nombre, apellido, fechaIngreso, bruto); 
+                    break;
+                case "D":
+                    empleado = new Docente(legajo, nombre, apellido, fechaIngreso, bruto);
+                    break;
+                case "B":
+                    empleado = new Bedel(legajo, nombre, apellido, fechaIngreso, bruto, apodo);
+                    break;
+                default:
+                    throw new Exception("Tipo inválido.");
+            }
+            this._empleados.Add(empleado);
 
         }
         public void EliminarAlumno(int codigo)
@@ -83,7 +100,7 @@ namespace Solucion.LibreriaNegocio
         //}
         public List<Empleado> TraerEmpleados()
         {
-            return _empleados;
+            return Empleados;
         }
         //public List<Empleado> TraerEmpleadosPorNombre(string nombre)
         //{

@@ -19,11 +19,16 @@ namespace Solucion.LibreriaNegocio
         {
 
         }
-        public Empleado(int legajo, string nombre, string apellido)
+        public Empleado(int legajo, string nombre, string apellido, DateTime fechaIngreso, double bruto)
         {
             this._legajo = legajo;
             this._nombre = nombre;
             this._apellido = apellido;
+            this._fechaIngreso = fechaIngreso;
+            this._ultimoSalario = new Salario(bruto);
+            this._salarios = new List<Salario>();
+            AgregarSalario(this._ultimoSalario);
+
         }
 
         //PROPIEDADES
@@ -61,27 +66,34 @@ namespace Solucion.LibreriaNegocio
         //MÉTODOS
         public void AgregarSalario(Salario salario)
         {
-
+            this._salarios.Add(salario);
+            this._ultimoSalario = salario;
         }
-        //public bool Equals(Object obj)
-        //{
-
-        //}
+        public override bool Equals(object obj)
+        {
+            //Revisar este método. No llego a entenderlo. Tomado del código de Silvio.
+            if (obj == null)
+            {
+                return false;
+            }
+            if (!(obj is Empleado))
+            {
+                return false;
+            }
+            return (this.Legajo == ((Empleado)obj).Legajo);
+        }
         public override string GetCredencial()
         {
             return string.Format("{0} - {1} - {2} $ / {3} $", this._legajo, GetNombreCompleto(), this._salarios, this._ultimoSalario) ;
         }
         public override string GetNombreCompleto()
         {
-            return base.GetNombreCompleto();
+            return string.Format("{0} {1}", this._apellido, this._nombre);
         }
         public override string ToString()
         {
             return GetCredencial();
         }
-
-
-
 
     }
 }
