@@ -145,6 +145,7 @@ namespace Solucion.Consola
                 Console.WriteLine("Error en uno de los datos ingresado. " + ex.Message);
                 Console.ReadKey();
             }
+            Console.ReadKey();
         }
         public static void BorrarAlumno(Facultad facultad)
         {

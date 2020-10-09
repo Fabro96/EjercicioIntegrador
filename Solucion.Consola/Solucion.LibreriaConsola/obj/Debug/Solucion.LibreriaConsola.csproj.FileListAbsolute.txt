@@ -4,3 +4,6 @@ C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\
 C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\obj\Debug\Solucion.LibreriaConsola.csproj.CoreCompileInputs.cache
 C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\obj\Debug\Solucion.LibreriaConsola.dll
 C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\obj\Debug\Solucion.LibreriaConsola.pdb
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\bin\Debug\Solucion.LibreriaNegocio.dll
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\bin\Debug\Solucion.LibreriaNegocio.pdb
+C:\Users\Fabrizio\OneDrive\Documentos\Facultad\2020\2C 2020\CAI\Práctica - CAI\EjercicioIntegrador\Solucion.Consola\Solucion.LibreriaConsola\obj\Debug\Solucion.LibreriaConsola.csproj.CopyComplete

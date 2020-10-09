@@ -45,5 +45,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validaciones.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Solucion.LibreriaNegocio\Solucion.LibreriaNegocio.csproj">
+      <Project>{fda964f6-7f06-4e53-97b1-e3b72e059398}</Project>
+      <Name>Solucion.LibreriaNegocio</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

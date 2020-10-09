@@ -1,4 +1,6 @@
 ﻿using System;
+using Solucion.LibreriaNegocio;
+using System.Text.RegularExpressions;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,8 +12,16 @@ namespace Solucion.LibreriaConsola
     {
         public static string PedirString(string msj)
         {
+            string s;
             Console.WriteLine("Ingrese " + msj);
-            string s = Console.ReadLine(); //Crear Validación de String
+            Regex expresion = new Regex("^[a-zA-Z]+$");
+            s = Console.ReadLine();
+            while (!expresion.IsMatch(s))
+            {
+                Console.WriteLine("Intentelo Nuevamente");
+                s = Console.ReadLine();
+            }
+            
             return s;
         }
         public static int PedirInt(string msj)
